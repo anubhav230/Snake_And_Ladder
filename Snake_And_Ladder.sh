@@ -12,7 +12,7 @@ movingCheck=$((RANDOM%3))
 stepCheck=$((RANDOM%6+1))
 case $movingCheck in
 	$FORWARD_MOVE)
-		position=$((startPotion+stepCheck))
+		position=$((startPosition+stepCheck))
 		echo "player moved $position steps forward"
 		;;
 	$BACKWARD_MOVE)
