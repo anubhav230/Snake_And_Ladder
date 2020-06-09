@@ -1,2 +1,6 @@
 #!/bin/bash -x
-echo "Welcome to the Snake And Ladder Program"
+numberOfPlayer=1
+startPosition=0
+
+echo "Starting with only $numberOfPlayer player"
+echo "First Player position is $startPosition"
