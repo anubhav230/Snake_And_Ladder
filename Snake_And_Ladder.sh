@@ -17,6 +17,10 @@ rollDice() {
         case $movingCheck in
                 $FORWARD_MOVE)
                         position=$(($position+$stepCheck))
+			if [ $position -gt $WINNING_POSITION ]
+			then
+				position=$((position-stepCheck))
+			fi
                         echo "$position"
                         ;;
                 $BACKWARD_MOVE)
@@ -37,6 +41,7 @@ rollDice() {
 
 while (( $position < $WINNING_POSITION ))
 do
+
 	rollDice
 
 done
