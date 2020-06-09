@@ -21,7 +21,6 @@ rollDice() {
 			then
 				position=$((position-stepCheck))
 			fi
-                        echo "$position"
                         ;;
                 $BACKWARD_MOVE)
                         position=$(($position-$stepCheck))
@@ -29,12 +28,12 @@ rollDice() {
                         then
                                 position=$START_POSITION
                         fi
-                        echo "$position"
                         ;;
                 $NO_MOVE)
                        position=$(($position+0))
                        ;;
         esac
+
 
 
 }
@@ -43,6 +42,10 @@ while (( $position < $WINNING_POSITION ))
 do
 
 	rollDice
+	((dice++))
+	echo "Player position=  $position  at $dice dice"
+
 
 done
 echo "player won the game $position"
+echo "dice has been rolled for $dice times"
